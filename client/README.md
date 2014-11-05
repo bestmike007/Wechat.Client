@@ -20,7 +20,7 @@ This client uses the post request body to receive messages and the post response
 <pre>Request body:
 [{ c: 'receive', from: 'bestmike007', msg: 'Hello!' }]
 Response body:
-[{ c: 'send', to: 'bestmike007', msg: 'Hello world!' }, { c: 'add', id: 'mysterious' } ]
+[{ c: 'send', to: 'bestmike007', msg: 'Hello world!' }, { c: 'add', id: 'mysterious', msg: 'I am bestmike007' } ]
 </pre>
 
 ### Wechat Sign-in
@@ -43,6 +43,7 @@ Use the unique wechat id to send a friend request. Command object in response bo
 <pre>{
   c: 'add', // The command type
   id: 'bestmike007' // The unique wechat id to send a friend request
+  msg: 'Hello' // Request message
 }</pre>
 
 ### Send a Message
@@ -67,5 +68,6 @@ Receive a message from wechat client. Command object in request body example:
 
 ## To be done
 
-1. Multi-media messages
-2. Group messages
+1. Message send status
+2. Multi-media messages
+3. Group messages
