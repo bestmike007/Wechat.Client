@@ -18,10 +18,12 @@ This client will constantly and sequencially send post requests to your endpoint
 This client uses the post request body to receive messages and the post response body to send commands. Both request body and response body are string representation of JSON arrays, which contains 0..N command objects. For example:
 
 <pre>Request body:
-[{ c: 'receive', from: 'bestmike007', msg: 'Hello!' }]
+[{ c: 'receive', from: 'bestmike007', msg: 'Hello%21' }]
 Response body:
-[{ c: 'send', to: 'bestmike007', msg: 'Hello world!' }, { c: 'add', id: 'mysterious', msg: 'I am bestmike007' } ]
+[{ c: 'send', to: 'bestmike007', msg: 'Hello%20World%21' }, { c: 'add', id: 'mysterious', msg: 'I%20am%20bestmike007' } ]
 </pre>
+
+PS. Due to encoding issues, the message content encoded and decoded with escape and unescape method.
 
 ### Wechat Sign-in
 
@@ -53,7 +55,7 @@ Send a message to a specific wechat user. For now only text message is supported
 <pre>{
   c: 'send', // The command type
   to: 'bestmike007', // The wechat id to send message to
-  msg: 'Hello world!' // The message to be sent
+  msg: 'Hello%20world%21' // The message to be sent
 }</pre>
 
 ### Receive a Message
@@ -63,7 +65,7 @@ Receive a message from wechat client. Command object in request body example:
 <pre>{
   c: 'receive', // The command type
   from: 'bestmike007', // The wechat id to send message to
-  msg: 'Hello world!' // The message to be sent
+  msg: 'Hello%20world%21' // The message to be sent
 }</pre>
 
 ## To be done
