@@ -78,7 +78,8 @@ class WechatClient
                             return null
                         _onMessage = (msg)->
                             try
-                                return null if msg.MsgType == -9999 || msg.FromUserName == '' || msg.actualSender != msg.FromUserName || (msg.Status != 4 && msg.Status != 3)
+                                # WebMM.Constants.STATE_REACH: 3
+                                return null if msg.MsgType == -9999 || msg.FromUserName == '' || msg.actualSender != msg.FromUserName || (msg.Status != 3)
                                 console.log JSON.stringify msg
                                 inbox.push {
                                     c: 'receive'
