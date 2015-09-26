@@ -9,7 +9,7 @@ const WechatClient = function(endpoint) {
       return location.host === "wx.qq.com" && typeof jQuery === 'function' && typeof MM === 'object' && typeof MMCgi === 'object';
     });
   };
-  _initializePage = () => {
+  const _initializePage = () => {
     if (page !== null) {
       page.close();
     }
@@ -41,7 +41,7 @@ const WechatClient = function(endpoint) {
       return console.log("Wechat web loaded, waiting for login..");
     });
   };
-  _injectCtrl = () => {
+  const _injectCtrl = () => {
     if (page.evaluate(function() {
       return typeof Ctrl === 'function' && typeof ctrl === 'object';
     })) {
@@ -50,7 +50,7 @@ const WechatClient = function(endpoint) {
     return page.evaluate(ClientController, endpoint);
   };
   _initializePage();
-  monitor = setInterval(() => {
+  const monitor = setInterval(() => {
     page.render("screen.png");
     if (_isWebWechat()) {
       return _injectCtrl();
