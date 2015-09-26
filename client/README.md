@@ -3,6 +3,12 @@ Wechat client
 
 Run this client with phantomjs.
 
+``` bash
+npm install
+npm run dist
+phantomjs build/main.js
+```
+
 ## How it works
 
 1. Open [wechat web client](https://wx.qq.com)
@@ -11,7 +17,7 @@ Run this client with phantomjs.
 
 ## Protocol
 
-The protocol is based on HTTP POST. This client can be controlled by any web application that conforms to this protocol. To run the client with specific http endpoint, run with endpoint argument ```phantomjs main.coffee --endpoint=http(s)://host:port/path```. Extra query string parameters including the timestamp and the currently signed in wechat id will be appended to the url, e.g. http(s)://host:port/path?_=1415167890000&id=bestmike007, when composing a post request. There is currently no means to authenticate the request, so please either use internal network or validate the request source.
+The protocol is based on HTTP POST. This client can be controlled by any web application that conforms to this protocol. To run the client with specific http endpoint, run with endpoint argument ```phantomjs build/main.js --endpoint=http(s)://host:port/path```. Extra query string parameters including the timestamp and the currently signed in wechat id will be appended to the url, e.g. http(s)://host:port/path?_=1415167890000&id=bestmike007, when composing a post request. There is currently no means to authenticate the request, so please either use internal network or validate the request source.
 
 This client will constantly and sequencially send post requests to your endpoint. And the client uses the wechat id as the unique identifier for a wechat user. This client does not support group chat for now.
 

@@ -1,0 +1,26 @@
+{
+  "name": "wechat-client",
+  "version": "1.0.0",
+  "description": "Wechat client\r ======",
+  "main": "main.js",
+  "scripts": {
+    "dist": "babel client --out-dir build",
+    "watch": "babel client --out-dir build --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bestmike007/Wechat.Client.git"
+  },
+  "keywords": [
+    "Wechat"
+  ],
+  "author": "bestmike007",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bestmike007/Wechat.Client/issues"
+  },
+  "homepage": "https://github.com/bestmike007/Wechat.Client#readme",
+  "dependencies": {
+    "babel": "^5.8.23"
+  }
+}
